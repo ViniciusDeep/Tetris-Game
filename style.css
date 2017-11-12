@@ -1,0 +1,20 @@
+canvas {
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+}
+
+
+body {
+
+	 background-image: url("http://www.areagamer.com.br/img/post_header_images/44b02338f025cd6dabd892a57130d5e3bf83bdea.png");
+	background-repeat: ;
+	background-position: center;
+
+}
+
+canvas {
+	background-image: url("./300x600.jpg");
+
+}
+
