@@ -67,6 +67,7 @@ function tick() {
         freeze();
         clearLines();
         if (lose) {
+            alert('Better luck next time');
             newGame();
             return false;
         }
