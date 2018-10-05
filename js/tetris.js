@@ -1,3 +1,4 @@
+var score = 0000;
 var COLS = 10, ROWS = 20;
 var board = [];
 var lose;
@@ -23,6 +24,15 @@ var shapes = [
 var colors = [
     'cyan', 'orange', 'blue', 'yellow', 'red', 'green', 'purple'
 ];
+var scoreholder = document.querySelector('[data-score]');
+
+scoreholder.innerHTML = score;
+
+// updates score value
+function updateScore(v) {
+    score += v;
+    scoreholder.innerHTML = score;
+}
 
 // creates a new 4x4 shape in global variable 'current'
 // 4x4 so as to cover the size when the shape is rotated
@@ -84,6 +94,7 @@ function freeze() {
             }
         }
     }
+    updateScore(20);
 }
 
 // returns rotates the rotated shape 'current' perpendicularly anticlockwise
@@ -113,6 +124,7 @@ function clearLines() {
             // increases score
             score++;
             document.getElementById( 'clearsound' ).play();
+            updateScore(100);
             for ( var yy = y; yy > 0; --yy ) {
                 for ( var x = 0; x < COLS; ++x ) {
                     board[ yy ][ x ] = board[ yy - 1 ][ x ];
