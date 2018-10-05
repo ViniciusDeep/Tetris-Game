@@ -3,24 +3,19 @@
     <head>
         <title>Tetris</title>
         <link rel='stylesheet' href='style.css' />
-        
         <link rel="icon" href="./icon.png">
-
     </head>
     <body>
-        
-      
-        
-        
         <audio id="clearsound" src="sound/pop.ogg" preload="auto"></audio>
-        <canvas width='300' height='600'></canvas>
+        <div class="holder">
+            <div class="score">
+                <p>SCORE: <span data-score>0</span></p>
+            </div>
+            <canvas width='300' height='600'></canvas>
+        </div>
 
-        
         <script src='js/tetris.js'></script>
         <script src='js/controller.js'></script>
         <script src='js/render.js'></script>
-        
-
-
     </body>
 </html>
