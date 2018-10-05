@@ -1,6 +1,7 @@
 var COLS = 10, ROWS = 20;
 var board = [];
 var lose;
+var score = 0;
 var interval;
 var current; // current moving shape
 var currentX, currentY; // position of current shape
@@ -109,6 +110,8 @@ function clearLines() {
             }
         }
         if ( rowFilled ) {
+            // increases score
+            score++;
             document.getElementById( 'clearsound' ).play();
             for ( var yy = y; yy > 0; --yy ) {
                 for ( var x = 0; x < COLS; ++x ) {
@@ -206,6 +209,7 @@ function newGame() {
     init();
     newShape();
     lose = false;
+    score = 0;
     interval = setInterval( tick, 250 );
 }
 

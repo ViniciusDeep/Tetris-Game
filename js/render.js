@@ -22,6 +22,10 @@ function render() {
             }
         }
     }
+    //prints score
+    ctx.font = '20px verdana';
+    ctx.fillStyle = 'black';
+    ctx.fillText('score: ' + score, 5, 80);
 
     ctx.fillStyle = 'red';
     ctx.strokeStyle = 'black';
