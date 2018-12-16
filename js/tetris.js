@@ -104,22 +104,26 @@ function rotate(current) {
 
 // check if any lines are filled and clear them
 function clearLines() {
-  for (var y = ROWS - 1; y >= 0; --y) {
-    var rowFilled = true;
-    for (var x = 0; x < COLS; ++x) {
-      if (board[y][x] == 0) {
-        rowFilled = false;
-        break;
-      }
-    }
-    if (rowFilled) {
-      // increases score
-      score++;
-      document.getElementById("clearsound").play();
-      updateScore(100);
-      for (var yy = y; yy > 0; --yy) {
-        for (var x = 0; x < COLS; ++x) {
-          board[yy][x] = board[yy - 1][x];
+
+    for ( var y = ROWS - 1; y >= 0; --y ) {
+        var rowFilled = true;
+        for ( var x = 0; x < COLS; ++x ) {
+            if ( board[ y ][ x ] == 0 ) {
+                rowFilled = false;
+                break;
+            }
+        }
+        if ( rowFilled ) {
+            // increases score
+            score++;
+            document.getElementById( 'clearsound' ).play();
+            for ( var yy = y; yy > 0; --yy ) {
+                for ( var x = 0; x < COLS; ++x ) {
+                    board[ yy ][ x ] = board[ yy - 1 ][ x ];
+                }
+            }
+            ++y;
+
         }
       }
       ++y;
@@ -213,13 +217,14 @@ function gameOver() {
 }
 
 function newGame() {
-  gameOver();
-  clearInterval(interval);
-  init();
-  newShape();
-  lose = false;
-  score = 0;
-  interval = setInterval(tick, 250);
+
+    clearInterval(interval);
+    init();
+    newShape();
+    lose = false;
+    score = 0;
+    interval = setInterval( tick, 250 );
+
 }
 
 newGame();
